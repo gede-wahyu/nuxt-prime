@@ -11,6 +11,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.1",
     "@primevue/themes": "^4.0.1",
     "nuxt": "^3.12.4",
     "primeicons": "^7.0.0",
