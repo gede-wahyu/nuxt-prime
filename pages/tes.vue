@@ -64,55 +64,52 @@ const surfaceOptions = ["slate", "gray", "zinc", "neutral", "stone"];
 </script>
 
 <template>
-  <ClientOnly>
-    <div class="default">
-      <Button label="I'm a Button" />
-      <ToggleSwitch
-        v-model="isColorSchemeDark"
-        @update:model-value="toggleColorScheme"
-      />
-      <Button icon="pi pi-palette" @click="toggleColorPopover" />
-      <ColorPicker v-model="primaryPicker" />
+  <div class="default">
+    <Button label="I'm a Button" @click="$router.push('/')" />
+    <ToggleSwitch
+      v-model="isColorSchemeDark"
+      @update:model-value="toggleColorScheme"
+    />
+    <Button icon="pi pi-palette" @click="toggleColorPopover" />
+    <ColorPicker v-model="primaryPicker" />
 
-      <div class="px-6 py-3 bg-fuchsia-500 rounded-md">
-        <span>This element's background should be primary</span>
-      </div>
-      <pre>{{ primaryPalette }}</pre>
+    <div class="px-6 py-3 bg-fuchsia-500 rounded-md">
+      <span>This element's background should be primary</span>
     </div>
+    <pre>{{ primaryPalette }}</pre>
+  </div>
 
-    <Popover ref="colorPopover">
-      <div class="color-popover">
-        <span class="label">Primary</span>
-        <div class="primary-options">
-          <div
-            v-for="(item, index) in primaryOptions"
-            :key="item"
-            class="primary-item"
-            :class="`bg-${item}-500 dark:bg-${item}-400`"
-            @click="changePrimary(item)"
-          ></div>
-        </div>
-
-        <Divider />
-
-        <span class="label">Surface</span>
-        <div class="surface-options">
-          <div
-            v-for="item in surfaceOptions"
-            :key="item"
-            class="surface-item"
-            :class="`bg-${item}-500 dark:bg-${item}-400`"
-            @click="changeSurface(item)"
-          ></div>
-        </div>
+  <Popover ref="colorPopover">
+    <div class="color-popover">
+      <span class="label">Primary</span>
+      <div class="primary-options">
+        <div
+          v-for="(item, index) in primaryOptions"
+          :key="item"
+          class="primary-item"
+          :class="`bg-${item}-500 dark:bg-${item}-400`"
+          @click="changePrimary(item)"
+        ></div>
       </div>
-    </Popover>
-  </ClientOnly>
+
+      <Divider />
+
+      <span class="label">Surface</span>
+      <div class="surface-options">
+        <div
+          v-for="item in surfaceOptions"
+          :key="item"
+          class="surface-item"
+          :class="`bg-${item}-500 dark:bg-${item}-400`"
+          @click="changeSurface(item)"
+        ></div>
+      </div>
+    </div>
+  </Popover>
 </template>
 
 <style scoped>
 .default {
-  width: 100%;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;

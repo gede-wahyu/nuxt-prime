@@ -19,6 +19,8 @@
     "vue": "latest"
   },
   "devDependencies": {
-    "@primevue/nuxt-module": "^4.0.1"
+    "@primevue/nuxt-module": "^4.0.1",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.5"
   }
 }
