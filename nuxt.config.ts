@@ -5,13 +5,20 @@ import Aura from "@primevue/themes/aura";
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
 
+  ssr: false,
+
   alias: {
     "@template": "~/@template",
   },
 
   devtools: { enabled: true },
 
-  modules: ["@primevue/nuxt-module", "@nuxtjs/tailwindcss"],
+  modules: [
+    "@primevue/nuxt-module",
+    "@nuxtjs/tailwindcss",
+    "@pinia/nuxt",
+    "@vueuse/nuxt",
+  ],
 
   css: ["~/assets/css/main.css"],
 

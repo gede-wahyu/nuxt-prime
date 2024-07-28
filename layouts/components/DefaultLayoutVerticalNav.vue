@@ -1,17 +1,18 @@
 <script setup>
 import { VerticalNavLayout } from "@template";
+import navItems from "~/navigations/vertical";
 </script>
 
 <template>
-  <VerticalNavLayout>
+  <VerticalNavLayout :nav-items="navItems">
     <template v-slot:navbar>
       <div>Navbar</div>
     </template>
 
     <template #default>
-      <ClientOnly>
-        <slot />
-      </ClientOnly>
+      <!-- <ClientOnly> -->
+      <slot />
+      <!-- </ClientOnly> -->
     </template>
 
     <template v-slot:footer>

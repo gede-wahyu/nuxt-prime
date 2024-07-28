@@ -66,16 +66,20 @@ const surfaceOptions = ["slate", "gray", "zinc", "neutral", "stone"];
 <template>
   <div class="default">
     <Button label="I'm a Button" @click="$router.push('/')" />
+
     <ToggleSwitch
       v-model="isColorSchemeDark"
       @update:model-value="toggleColorScheme"
     />
-    <Button icon="pi pi-palette" @click="toggleColorPopover" />
-    <ColorPicker v-model="primaryPicker" />
 
-    <div class="px-6 py-3 bg-fuchsia-500 rounded-md">
+    <Button icon="pi pi-palette" @click="toggleColorPopover" />
+
+    <!-- <ColorPicker v-model="primaryPicker" /> -->
+
+    <div class="rounded-md bg-primary-500 px-6 py-3">
       <span>This element's background should be primary</span>
     </div>
+
     <pre>{{ primaryPalette }}</pre>
   </div>
 

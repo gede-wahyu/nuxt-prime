@@ -19,5 +19,12 @@
             "❗"
         ],
         "description": "Add warning emoji"
+    },
+    "Add section emoji": {
+        "prefix": "cm-section-emoji",
+        "body": [
+            "🚩"
+        ],
+        "description": "Add section emoji"
     }
 }
