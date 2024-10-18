@@ -6,7 +6,6 @@ import {
   updateSurfacePalette,
 } from "@primevue/themes";
 
-const isColorSchemeDark = ref(false);
 const primaryPicker = ref();
 const colorPopover = ref();
 
@@ -19,12 +18,6 @@ const primaryPalette = computed(() => {
 watch(primaryPalette, () => {
   updatePrimaryPalette(primaryPalette.value);
 });
-
-const toggleColorScheme = () => {
-  const element = document.querySelector("html");
-  if (isColorSchemeDark.value) element.classList.add("mode-dark");
-  else element.classList.remove("mode-dark");
-};
 
 const toggleColorPopover = (event) => {
   colorPopover.value.toggle(event);
@@ -67,14 +60,9 @@ const surfaceOptions = ["slate", "gray", "zinc", "neutral", "stone"];
   <div class="default">
     <Button label="I'm a Button" @click="$router.push('/')" />
 
-    <ToggleSwitch
-      v-model="isColorSchemeDark"
-      @update:model-value="toggleColorScheme"
-    />
-
     <Button icon="pi pi-palette" @click="toggleColorPopover" />
 
-    <!-- <ColorPicker v-model="primaryPicker" /> -->
+    <ColorPicker v-model="primaryPicker" />
 
     <div class="rounded-md bg-primary-500 px-6 py-3">
       <span>This element's background should be primary</span>

@@ -1,0 +1,17 @@
+html {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  box-sizing: border-box;
+}
+body {
+  min-block-size: 100dvh;
+  background-color: var(--g-bg-surface-background);
+  color: var(--g-text-color);
+  /* overflow-y: scroll; */
+}
+
+.app-wrapper {
+  min-block-size: 100dvh;
+  max-block-size: 100%;
+  position: relative;
+}

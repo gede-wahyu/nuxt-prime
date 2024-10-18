@@ -1,0 +1,11 @@
+.layout-footer {
+  inline-size: 100%;
+  padding-inline: var(--content-padding-inline);
+  padding-block: 1rem;
+  margin-inline: auto;
+}
+
+/* 👉 width-boxed */
+.content--width-boxed .layout-footer {
+  max-inline-size: var(--content-max-inline-size);
+}

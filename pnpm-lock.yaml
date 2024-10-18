@@ -22,7 +22,7 @@ dependencies:
     version: 10.11.0(nuxt@3.12.4)(vue@3.4.34)
   nuxt:
     specifier: ^3.12.4
-    version: 3.12.4(vite@5.3.5)
+    version: 3.12.4(sass@1.77.8)(vite@5.3.5)
   pinia:
     specifier: ^2.2.0
     version: 2.2.0(vue@3.4.34)
@@ -35,6 +35,9 @@ dependencies:
   vue:
     specifier: latest
     version: 3.4.34
+  vue3-perfect-scrollbar:
+    specifier: ^2.0.0
+    version: 2.0.0(vue@3.4.34)
 
 devDependencies:
   '@primevue/nuxt-module':
@@ -46,6 +49,9 @@ devDependencies:
   prettier-plugin-tailwindcss:
     specifier: ^0.6.5
     version: 0.6.5(prettier@3.3.3)
+  sass:
+    specifier: ^1.77.8
+    version: 1.77.8
 
 packages:
 
@@ -1175,7 +1181,7 @@ packages:
       '@nuxt/kit': 3.12.4(magicast@0.3.4)
       '@nuxt/schema': 3.12.4
       execa: 7.2.0
-      vite: 5.3.5
+      vite: 5.3.5(sass@1.77.8)
     transitivePeerDependencies:
       - magicast
       - rollup
@@ -1237,7 +1243,7 @@ packages:
       simple-git: 3.25.0
       sirv: 2.0.4
       unimport: 3.9.0(rollup@4.19.0)
-      vite: 5.3.5
+      vite: 5.3.5(sass@1.77.8)
       vite-plugin-inspect: 0.8.5(@nuxt/kit@3.12.4)(vite@5.3.5)
       vite-plugin-vue-inspector: 5.1.3(vite@5.3.5)
       which: 3.0.1
@@ -1325,7 +1331,7 @@ packages:
       - supports-color
     dev: false
 
-  /@nuxt/vite-builder@3.12.4(vue@3.4.34):
+  /@nuxt/vite-builder@3.12.4(sass@1.77.8)(vue@3.4.34):
     resolution: {integrity: sha512-5v3y6SkshJurZYJWHtc7+NGeCgptsreCSguBCZVzJxYdsPFdMicLoxjTt8IGAHWjkGVONrX+K8NBSFFgnx40jQ==}
     engines: {node: ^14.18.0 || >=16.10.0}
     peerDependencies:
@@ -1360,8 +1366,8 @@ packages:
       ufo: 1.5.4
       unenv: 1.10.0
       unplugin: 1.12.0
-      vite: 5.3.5
-      vite-node: 2.0.4
+      vite: 5.3.5(sass@1.77.8)
+      vite-node: 2.0.4(sass@1.77.8)
       vite-plugin-checker: 0.7.2(vite@5.3.5)
       vue: 3.4.34
       vue-bundle-renderer: 2.1.0
@@ -1988,7 +1994,7 @@ packages:
       '@babel/core': 7.24.9
       '@babel/plugin-transform-typescript': 7.25.0(@babel/core@7.24.9)
       '@vue/babel-plugin-jsx': 1.2.2(@babel/core@7.24.9)
-      vite: 5.3.5
+      vite: 5.3.5(sass@1.77.8)
       vue: 3.4.34
     transitivePeerDependencies:
       - supports-color
@@ -2001,7 +2007,7 @@ packages:
       vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.3.5
+      vite: 5.3.5(sass@1.77.8)
       vue: 3.4.34
     dev: false
 
@@ -2191,7 +2197,7 @@ packages:
       '@vueuse/core': 10.11.0(vue@3.4.34)
       '@vueuse/metadata': 10.11.0
       local-pkg: 0.5.0
-      nuxt: 3.12.4(vite@5.3.5)
+      nuxt: 3.12.4(sass@1.77.8)(vite@5.3.5)
       vue-demi: 0.14.10(vue@3.4.34)
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -3698,6 +3704,9 @@ packages:
     resolution: {integrity: sha512-K6acvFaelNxx8wc2VjbIzXKDVB0Khs0QT35U6NkGfTdCmjLNcO2945m7RFNR9/RPVFm48hq7QPzK8uGH18HCGw==}
     dev: false
 
+  /immutable@4.3.7:
+    resolution: {integrity: sha512-1hqclzwYwjRDFLjcFxOM5AYkkG0rpFPpr1RLPMEuGczoS7YA8gLhy8SWXYRAA/XwfEHpfo3cw5JGioS32fnMRw==}
+
   /inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
     deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
@@ -4489,7 +4498,7 @@ packages:
       fsevents: 2.3.3
     dev: false
 
-  /nuxt@3.12.4(vite@5.3.5):
+  /nuxt@3.12.4(sass@1.77.8)(vite@5.3.5):
     resolution: {integrity: sha512-/ddvyc2kgYYIN2UEjP8QIz48O/W3L0lZm7wChIDbOCj0vF/yLLeZHBaTb3aNvS9Hwp269nfjrm8j/mVxQK4RhA==}
     engines: {node: ^14.18.0 || >=16.10.0}
     hasBin: true
@@ -4507,7 +4516,7 @@ packages:
       '@nuxt/kit': 3.12.4(magicast@0.3.4)
       '@nuxt/schema': 3.12.4
       '@nuxt/telemetry': 2.5.4
-      '@nuxt/vite-builder': 3.12.4(vue@3.4.34)
+      '@nuxt/vite-builder': 3.12.4(sass@1.77.8)(vue@3.4.34)
       '@unhead/dom': 1.9.16
       '@unhead/ssr': 1.9.16
       '@unhead/vue': 1.9.16(vue@3.4.34)
@@ -4765,6 +4774,10 @@ packages:
 
   /perfect-debounce@1.0.0:
     resolution: {integrity: sha512-xCy9V055GLEqoFaHoC1SoLIaLmWctgCUaBaWxDZ7/Zx4CTyX7cJQLJOok/orfjZAh9kEYpjJa4d0KcJmCbctZA==}
+
+  /perfect-scrollbar@1.5.5:
+    resolution: {integrity: sha512-dzalfutyP3e/FOpdlhVryN4AJ5XDVauVWxybSkLZmakFE2sS3y3pc4JnSprw8tGmHvkaG5Edr5T7LBTZ+WWU2g==}
+    dev: false
 
   /picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
@@ -5486,6 +5499,15 @@ packages:
   /safe-buffer@5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
     dev: false
+
+  /sass@1.77.8:
+    resolution: {integrity: sha512-4UHg6prsrycW20fqLGPShtEvo/WyHRVRHwOP4DzkUrObWoWI05QBSfzU71TVB7PFaL104TwNaHpjlWXAZbQiNQ==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.6.0
+      immutable: 4.3.7
+      source-map-js: 1.2.0
 
   /scule@1.3.0:
     resolution: {integrity: sha512-6FtHJEvt+pVMIB9IBY+IcCJ6Z5f1iQnytgyfKMhDKgmzYG+TeH/wx1y3l27rshSbLiSanrR9ffZDrEsmjlQF2g==}
@@ -6229,10 +6251,10 @@ packages:
     peerDependencies:
       vite: ^2.6.0 || ^3.0.0 || ^4.0.0 || ^5.0.0-0
     dependencies:
-      vite: 5.3.5
+      vite: 5.3.5(sass@1.77.8)
     dev: false
 
-  /vite-node@2.0.4:
+  /vite-node@2.0.4(sass@1.77.8):
     resolution: {integrity: sha512-ZpJVkxcakYtig5iakNeL7N3trufe3M6vGuzYAr4GsbCTwobDeyPJpE4cjDhhPluv8OvQCFzu2LWp6GkoKRITXA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -6241,7 +6263,7 @@ packages:
       debug: 4.3.5
       pathe: 1.1.2
       tinyrainbow: 1.2.0
-      vite: 5.3.5
+      vite: 5.3.5(sass@1.77.8)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -6297,7 +6319,7 @@ packages:
       npm-run-path: 4.0.1
       strip-ansi: 6.0.1
       tiny-invariant: 1.3.3
-      vite: 5.3.5
+      vite: 5.3.5(sass@1.77.8)
       vscode-languageclient: 7.0.0
       vscode-languageserver: 7.0.0
       vscode-languageserver-textdocument: 1.0.11
@@ -6324,7 +6346,7 @@ packages:
       perfect-debounce: 1.0.0
       picocolors: 1.0.1
       sirv: 2.0.4
-      vite: 5.3.5
+      vite: 5.3.5(sass@1.77.8)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -6344,12 +6366,12 @@ packages:
       '@vue/compiler-dom': 3.4.34
       kolorist: 1.8.0
       magic-string: 0.30.10
-      vite: 5.3.5
+      vite: 5.3.5(sass@1.77.8)
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /vite@5.3.5:
+  /vite@5.3.5(sass@1.77.8):
     resolution: {integrity: sha512-MdjglKR6AQXQb9JGiS7Rc2wC6uMjcm7Go/NHNO63EwiJXfuk9PgqiP/n5IDJCziMkfw9n4Ubp7lttNwz+8ZVKA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -6380,6 +6402,7 @@ packages:
       esbuild: 0.21.5
       postcss: 8.4.40
       rollup: 4.19.0
+      sass: 1.77.8
     optionalDependencies:
       fsevents: 2.3.3
     dev: false
@@ -6455,6 +6478,15 @@ packages:
       vue: ^3.2.0
     dependencies:
       '@vue/devtools-api': 6.6.3
+      vue: 3.4.34
+    dev: false
+
+  /vue3-perfect-scrollbar@2.0.0(vue@3.4.34):
+    resolution: {integrity: sha512-nSWVcRyViCgt0Pe3RhU3w/BllLcFSrEzYOGlRBjSyhVmiZlERHHziffW+9P8L0IMEWouC5t+uYrgNJGSAElqMA==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      perfect-scrollbar: 1.5.5
       vue: 3.4.34
     dev: false
 

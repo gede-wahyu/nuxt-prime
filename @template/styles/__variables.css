@@ -1,0 +1,74 @@
+/* 👉 Primitive variables */
+:root {
+  --g-bg-surface-background: var(--p-surface-100);
+  --g-bg-surface-foreground: var(--p-surface-0);
+  --g-bg-surface-tonal: color-mix(
+    in srgb,
+    var(--p-surface-300),
+    transparent 70%
+  );
+  --g-surface-input-background: var(--p-surface-100);
+  --g-text-color: var(--p-surface-700);
+  --g-box-shadow-1: 0 2px 8px rgba(0, 0, 0, 0.1), 0 0 transparent,
+    0 0 transparent;
+  --g-box-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.2), 0 0 transparent,
+    0 0 transparent;
+  --g-border-color: var(--p-surface-200);
+}
+.mode-dark {
+  --g-bg-surface-background: var(--p-surface-900);
+  --g-bg-surface-foreground: var(--p-surface-800);
+  --g-bg-surface-tonal: color-mix(
+    in srgb,
+    var(--p-surface-700),
+    transparent 60%
+  );
+  --g-surface-input-background: var(--p-surface-900);
+  --g-text-color: var(--p-surface-300);
+  --g-box-shadow-1: 0 2px 8px rgba(0, 0, 0, 0.1), 0 0 transparent,
+    0 0 transparent;
+  --g-box-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.2), 0 0 transparent,
+    0 0 transparent;
+  --g-border-color: var(--p-surface-700);
+}
+
+/* 👉 Component variables */
+:root,
+.mode-dark {
+  --font-family: "Poppins", system-ui, sans-serif;
+  --font-size: 14px;
+
+  --vertical-nav-inline-size: 260px;
+  --vertical-nav-inline-size--negative: calc(
+    -1 * var(--vertical-nav-inline-size)
+  );
+  --vertical-nav-inline-size--type-icon: 70px;
+  --vertical-nav-z-index: 20;
+  --vertical-nav-bg--foreground: var(--g-bg-surface-foreground);
+  --vertical-nav-bg--background: var(--g-bg-surface-background);
+  --vertical-nav-box-shadow: var(--g-box-shadow-2);
+  --vertical-nav-transition-duration: 0.25s;
+  --vertical-nav-border-color: var(--g-border-color);
+  --vertical-nav-theme-mixed: var(--p-surface-900);
+  --vertical-nav-theme-mixed-darker: color-mix(
+    in srgb,
+    var(--p-surface-900),
+    black 30%
+  );
+  --navbar-z-index: 10;
+  --navbar-bg--foreground: var(--g-bg-surface-foreground);
+  --navbar-bg--background: var(--g-bg-surface-background);
+  --navbar-box-shadow: var(--g-box-shadow-1);
+  --navbar-border-color: var(--g-border-color);
+  --navbar-border-radius: var(--p-border-radius-md);
+
+  --content-transition-duration: 0.2s;
+  --content-padding-inline: 1.5rem;
+  --content-max-inline-size: 1440px;
+  --content-theme-mixed: var(--p-surface-900);
+  --content-theme-mixed-darker: color-mix(
+    in srgb,
+    var(--p-surface-900),
+    black 30%
+  );
+}

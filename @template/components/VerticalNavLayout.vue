@@ -1,6 +1,7 @@
 <script setup>
-import { useTemplateConfigStore } from "@template/stores/template";
-import { VerticalNav } from "@template";
+import { useTemplateConfigStore } from "@template/stores";
+import { VerticalNav, useLayout } from "@template";
+import { PerfectScrollbar } from "vue3-perfect-scrollbar";
 
 const props = defineProps({
   navItems: {
@@ -9,31 +10,61 @@ const props = defineProps({
   },
 });
 
-const templateConfigStore = useTemplateConfigStore();
+const route = useRoute();
+const layout = useLayout();
+const configStore = useTemplateConfigStore();
+
+const verticalNavRef = ref();
+const shouldRenderActionElement = computed(() => {
+  const isXL = configStore.isXlScreen;
+  const isUnpinned = configStore.isVerticalNavUnpinned;
+  const isTypeHidden = configStore.isVerticalNavTypeHidden;
+
+  return isXL ? isUnpinned && isTypeHidden : true;
+});
+
+const verticalNavLayoutAction = (val = true) => {
+  layout.verticalNav.updateIsHiddenActive(val);
+};
+
+onClickOutside(verticalNavRef, () => {
+  verticalNavLayoutAction(false);
+});
+
+watch(
+  () => route.name,
+  () => {
+    verticalNavLayoutAction(false);
+  },
+);
 </script>
 
 <template>
-  <div class="layout-wrapper" :class="templateConfigStore.layoutClasses">
-    <div class="layout-vertical-nav">
-      <VerticalNav :nav-items="props.navItems" />
-    </div>
-
-    <div class="layout-content-wrapper">
-      <div class="layout-navbar bg-green-500">
-        <slot name="navbar" />
+  <div class="layout-wrapper" :class="[...configStore.layoutClasses]">
+    <VerticalNav
+      ref="verticalNavRef"
+      :nav-items="props.navItems"
+      @on-click-close-button="verticalNavLayoutAction(false)"
+    />
+    <component
+      :is="layout.content.isStyleCard() ? PerfectScrollbar : 'div'"
+      class="layout-content-wrapper"
+    >
+      <div class="layout-navbar">
+        <slot
+          name="navbar"
+          :verticalNavLayoutAction="verticalNavLayoutAction"
+          :shouldRenderActionElement="shouldRenderActionElement"
+        />
       </div>
 
-      <div class="layout-page-content bg-orange-500">
+      <div class="layout-page-content">
         <slot />
       </div>
 
-      <div class="layout-footer bg-teal-500">
+      <div class="layout-footer">
         <slot name="footer" />
       </div>
-    </div>
+    </component>
   </div>
 </template>
-
-<style>
-@import url("~/@template/styles/index.css");
-</style>

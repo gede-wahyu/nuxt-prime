@@ -1,0 +1,105 @@
+/* 👉 base */
+/* TODO: set trans-duration into var */
+.layout-navbar {
+  inline-size: 100%;
+  border-bottom-width: 1px;
+  transition: all 0.25s ease;
+}
+/* TODO: set trans-duration into var */
+.layout-navbar .navbar {
+  inline-size: 100%;
+  margin-inline: auto;
+  padding-inline: var(--content-padding-inline);
+  padding-block: 0.75rem;
+  transition: all 0.25s ease;
+}
+
+/* 👉 position-sticky */
+.navbar--position-sticky .layout-navbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--navbar-z-index);
+}
+
+/* 👉 position-hidden */
+.navbar--position-hidden .layout-navbar {
+  display: none;
+}
+
+/* 👉 style-full */
+.navbar--style-full .layout-navbar {
+  background-color: var(--navbar-bg--foreground);
+  border-bottom-color: var(--navbar-border-color);
+  box-shadow: var(--navbar-box-shadow);
+}
+
+/* 👉 style-boxed */
+.navbar--style-boxed .layout-navbar {
+  padding-block-start: 1rem;
+  padding-inline: 1.5rem;
+  border-bottom-width: 0;
+}
+.navbar--style-boxed .layout-navbar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+
+  inline-size: 100%;
+  block-size: calc(8rem);
+
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--g-bg-surface-background), transparent 70%) 44%,
+    color-mix(in srgb, var(--g-bg-surface-background), transparent 43%) 73%,
+    color-mix(in srgb, var(--g-bg-surface-background), transparent 0%)
+  );
+  backdrop-filter: blur(10px);
+  mask: linear-gradient(black, black 25%, transparent 100%);
+}
+.navbar--style-boxed .layout-navbar .navbar {
+  background-color: var(--navbar-bg--foreground);
+  border-bottom-color: var(--navbar-border-color);
+  border-radius: var(--navbar-border-radius);
+  box-shadow: var(--navbar-box-shadow);
+}
+
+/* 👉 style-bordered */
+.navbar--style-bordered .layout-navbar {
+  background-color: var(--navbar-bg--foreground);
+  border-bottom-color: var(--navbar-border-color);
+}
+
+/* 👉 style-bare */
+.navbar--style-bare .layout-navbar {
+  background-color: var(--navbar-bg--background);
+  border-bottom-color: transparent;
+}
+.navbar--style-bare .layout-page-content {
+  padding-top: 0;
+}
+
+/* 👉 background-surface */
+.navbar--background-surface.navbar--style-full .layout-navbar,
+.navbar--background-surface.navbar--style-boxed .layout-navbar .navbar,
+.navbar--background-surface.navbar--style-bordered .layout-navbar {
+  background-color: var(--navbar-bg--foreground);
+}
+
+/* 👉 background-blurred */
+.navbar--background-blurred.navbar--style-full .layout-navbar,
+.navbar--background-blurred.navbar--style-boxed .layout-navbar .navbar,
+.navbar--background-blurred.navbar--style-bordered .layout-navbar {
+  background-color: color-mix(
+    in srgb,
+    var(--navbar-bg--foreground),
+    transparent 40%
+  );
+  backdrop-filter: blur(10px);
+}
+
+/* 👉 width-boxed */
+.content--width-boxed .layout-navbar .navbar {
+  max-inline-size: var(--content-max-inline-size);
+}

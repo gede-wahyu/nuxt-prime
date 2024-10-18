@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     "./@template/components/*.{js,vue}",
+    "./nuxt.config.ts",
     "./template.config.js",
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
@@ -15,6 +16,7 @@ module.exports = {
       pattern: /bg-(.+)-(400|500)/,
     },
   ],
+  darkMode: ["variant", ["&:is(.mode-dark *)"]],
   theme: {
     extend: {
       colors: {

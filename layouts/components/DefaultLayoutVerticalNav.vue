@@ -1,22 +1,27 @@
 <script setup>
 import { VerticalNavLayout } from "@template";
 import navItems from "~/navigations/vertical";
+import Navbar from "~/layouts/components/navbar/Navbar.vue";
+import Footer from "~/layouts/components/Footer.vue";
 </script>
 
 <template>
   <VerticalNavLayout :nav-items="navItems">
-    <template v-slot:navbar>
-      <div>Navbar</div>
+    <template
+      v-slot:navbar="{ shouldRenderActionElement, verticalNavLayoutAction }"
+    >
+      <Navbar
+        :should-render-bars="shouldRenderActionElement"
+        :vertical-nav-layout-action="verticalNavLayoutAction"
+      />
     </template>
 
     <template #default>
-      <!-- <ClientOnly> -->
       <slot />
-      <!-- </ClientOnly> -->
     </template>
 
     <template v-slot:footer>
-      <div>Footer</div>
+      <Footer />
     </template>
   </VerticalNavLayout>
 </template>

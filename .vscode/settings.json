@@ -29,5 +29,6 @@
       "isItalic": false,
       "behavior": "region"
     }
-  ]
+  ],
+  "cssrem.rootFontSize": 14
 }

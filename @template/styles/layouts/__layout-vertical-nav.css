@@ -1,0 +1,87 @@
+/* 👉 base */
+.layout-vertical-nav {
+  position: fixed;
+  top: 0;
+  left: var(--vertical-nav-inline-size--negative);
+  z-index: var(--vertical-nav-z-index);
+
+  block-size: 100%;
+  inline-size: var(--vertical-nav-inline-size);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  border-right-width: 1px;
+  color: var(--g-text-color);
+
+  transition:
+    transform var(--vertical-nav-transition-duration) ease,
+    width var(--vertical-nav-transition-duration) ease,
+    margin var(--vertical-nav-transition-duration) ease,
+    box-shadow var(--vertical-nav-transition-duration) ease,
+    background var(--vertical-nav-transition-duration) ease;
+  will-change: transform, inline-size, margin, box-shadow, background;
+}
+
+/* 👉 unpinned-style-icon */
+.vertical-nav--anchor-unpinned.vertical-nav--unpinned-style-icon
+  .layout-vertical-nav:not(.vertical-nav--icon-type-hovered) {
+  inline-size: var(--vertical-nav-inline-size--type-icon);
+}
+
+/* 👉 unpinned-style-hidden (inactive) */
+.vertical-nav--anchor-unpinned.vertical-nav--unpinned-style-hidden
+  .layout-vertical-nav {
+  transform: translateX(var(--vertical-nav-inline-size--negative));
+}
+
+/* 👉 overlay (unpinned-style-hidden or small-device) (active) */
+.vertical-nav--overlay-active .layout-vertical-nav {
+  transform: translateX(var(--vertical-nav-inline-size)) !important;
+}
+
+/* 👉 style-full */
+.vertical-nav--style-full .layout-vertical-nav {
+  background-color: var(--vertical-nav-bg--foreground);
+  border-right-color: var(--vertical-nav-border-color);
+  box-shadow: var(--vertical-nav-box-shadow);
+}
+
+/* 👉 style-boxed */
+/* TODO: add option wether to show header(app-title,act-btn)/footer(user-profile) */
+.vertical-nav--style-boxed .layout-vertical-nav {
+  background-color: var(--vertical-nav-bg--foreground);
+  border-right-color: var(--vertical-nav-border-color);
+  box-shadow: var(--vertical-nav-box-shadow);
+  margin-inline-start: 1rem;
+  margin-block: 1rem;
+  block-size: calc(100% - 2rem);
+  inline-size: calc(var(--vertical-nav-inline-size) - 1rem);
+  border-radius: var(--p-border-radius-md);
+}
+
+/* 👉 style-bordered */
+.vertical-nav--style-bordered .layout-vertical-nav {
+  background-color: var(--vertical-nav-bg--foreground);
+  border-right-color: var(--vertical-nav-border-color);
+}
+
+/* 👉 style-bare */
+.vertical-nav--style-bare .layout-vertical-nav {
+  background-color: var(--vertical-nav-bg--background);
+  border-right-color: transparent;
+}
+
+/* 👉 theme-mixed */
+.vertical-nav--theme-mixed .layout-vertical-nav {
+  background-color: var(--vertical-nav-theme-mixed);
+}
+.mode-dark .vertical-nav--theme-mixed .layout-vertical-nav {
+  background-color: var(--vertical-nav-theme-mixed-darker);
+}
+
+@media (min-width: 1280px) {
+  .layout-vertical-nav {
+    transform: translateX(var(--vertical-nav-inline-size));
+  }
+}

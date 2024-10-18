@@ -4,11 +4,14 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  size: {
+    type: Number,
+  },
 });
 </script>
 
 <template>
-  <div>
-    <i :class="props.icon" />
+  <div style="line-height: 0">
+    <i :class="props.icon" :style="`font-size: ${props.size}rem;`" />
   </div>
 </template>

@@ -1,0 +1,21 @@
+:root:root,
+.mode-dark {
+  --p-text-color: var(--g-text-color);
+}
+
+:root:root,
+.mode-dark {
+  --p-tabs-tablist-background: transparent;
+  --p-tabs-tabpanel-background: transparent;
+  --p-card-background: var(--g-bg-surface-foreground);
+  --p-drawer-background: var(--g-bg-surface-foreground);
+  --p-menu-background: var(--g-bg-surface-foreground);
+  --p-menu-item-focus-background: var(--g-bg-surface-tonal);
+  --p-button-secondary-background: var(--g-bg-surface-tonal);
+  --p-togglebutton-background: var(--g-surface-input-background);
+  --p-togglebutton-border-color: var(--g-surface-input-background);
+  --p-togglebutton-checked-background: var(--g-surface-input-background);
+  --p-togglebutton-checked-border-color: var(--g-surface-input-background);
+  --p-togglebutton-hover-background: var(--g-surface-input-background);
+  --p-form-field-background: var(--g-surface-input-background);
+}

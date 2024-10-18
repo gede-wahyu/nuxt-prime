@@ -1,7 +1,11 @@
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <div class="app-wrapper">
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 
-  <NuxtLoadingIndicator color="var(--p-primary-500)" />
+  <teleport to="body">
+    <NuxtLoadingIndicator color="var(--p-primary-500)" />
+  </teleport>
 </template>

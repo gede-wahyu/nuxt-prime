@@ -1,0 +1,14 @@
+/* TODO: set trans-duration into var */
+.layout-page-content {
+  flex-grow: 1;
+  inline-size: 100%;
+  padding-inline: var(--content-padding-inline);
+  padding-block: 1.5rem;
+  margin-inline: auto;
+  transition: all 0.25s ease;
+}
+
+/* 👉 width-boxed */
+.content--width-boxed .layout-page-content {
+  max-inline-size: var(--content-max-inline-size);
+}

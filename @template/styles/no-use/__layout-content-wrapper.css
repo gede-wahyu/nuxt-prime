@@ -1,0 +1,86 @@
+.layout-content-wrapper {
+  min-block-size: 100dvh;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  transition:
+    margin-inline-start var(--content-transition-duration) ease,
+    clip-path var(--content-transition-duration) ease;
+  will-change: margin-inline-start;
+}
+
+/* 👉 style-card */
+.content--style-card .layout-content-wrapper {
+  clip-path: inset(0.75rem round var(--p-border-radius-xl));
+  block-size: 100dvh;
+  overflow-y: scroll;
+}
+.content--style-card .layout-content-wrapper::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  inline-size: 100vw;
+  block-size: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  background-color: var(--g-bg-surface-background);
+}
+.content--style-card .layout-navbar {
+  padding-block-start: 0.75rem;
+  padding-inline: 0.75rem;
+}
+.content--style-card.navbar--style-boxed .layout-navbar {
+  padding-block-start: calc(1rem + 0.75rem);
+}
+.content--style-card .layout-content-wrapper .ps__thumb-y {
+  inset-inline-end: 0.85rem;
+}
+.content--style-card.vertical-nav--overlay-active .layout-content-wrapper {
+  clip-path: inset(
+    0.75rem 0.75rem 0.75rem var(--vertical-nav-inline-size) round
+      var(--p-border-radius-xl)
+  );
+}
+
+/* 👉 theme-mixed */
+body:has(.content--theme-mixed) {
+  background-color: var(--content-theme-mixed);
+}
+.mode-dark body:has(.content--theme-mixed) {
+  background-color: var(--content-theme-mixed-darker);
+}
+
+@media (min-width: 1280px) {
+  .layout-content-wrapper {
+    margin-inline-start: var(--vertical-nav-inline-size);
+  }
+  .vertical-nav--anchor-unpinned.vertical-nav--unpinned-style-icon
+    .layout-content-wrapper {
+    margin-inline-start: var(--vertical-nav-inline-size--type-icon);
+  }
+  .vertical-nav--anchor-unpinned.vertical-nav--unpinned-style-hidden
+    .layout-content-wrapper {
+    margin-inline-start: 0;
+  }
+  .content--style-card.vertical-nav--anchor-unpinned.vertical-nav--unpinned-style-icon
+    .layout-vertical-nav-wrapper:has(.layout-vertical-nav)
+    ~ .layout-content-wrapper {
+    clip-path: inset(
+      0.75rem 0.75rem 0.75rem
+        calc(
+          var(--vertical-nav-inline-size) -
+            var(--vertical-nav-inline-size--type-icon)
+        )
+        round var(--p-border-radius-xl)
+    );
+  }
+  .content--style-card.vertical-nav--anchor-unpinned.vertical-nav--unpinned-style-icon
+    .layout-vertical-nav-wrapper:has(
+      .layout-vertical-nav:not(.vertical-nav--icon-type-hovered)
+    )
+    ~ .layout-content-wrapper {
+    clip-path: inset(
+      0.75rem 0.75rem 0.75rem 0.15rem round var(--p-border-radius-xl)
+    );
+  }
+}

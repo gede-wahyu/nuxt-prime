@@ -18,9 +18,10 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@pinia/nuxt",
     "@vueuse/nuxt",
+    "vue3-perfect-scrollbar/nuxt",
   ],
 
-  css: ["~/assets/css/main.css"],
+  css: ["~/@template/styles/index.css", "~/assets/css/main.css"],
 
   postcss: {
     plugins: {
@@ -31,6 +32,7 @@ export default defineNuxtConfig({
 
   primevue: {
     options: {
+      ripple: true,
       theme: {
         preset: Aura,
         options: {
